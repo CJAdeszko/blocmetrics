@@ -19,6 +19,7 @@ group :development do
   gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'listen'
 end
 
 
@@ -48,3 +49,5 @@ group :development, :test do
   gem 'factory_bot'
   gem 'pry-rails'
 end
+
+gem 'devise'
