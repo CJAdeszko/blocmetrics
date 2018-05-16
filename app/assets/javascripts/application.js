@@ -13,3 +13,21 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+//NAV BAR DROPDOWN INIT
+document.addEventListener('turbolinks:load', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  var instances = M.Dropdown.init(elems, {});
+});
+
+//MOBILE NAV INIT
+document.addEventListener('turbolinks:load', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
+
+//PARALLAX INIT
+document.addEventListener('turbolinks:load', function() {
+  var elems = document.querySelectorAll('.parallax');
+  var instances = M.Parallax.init(elems, {});
+});
