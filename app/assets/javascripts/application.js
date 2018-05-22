@@ -31,3 +31,9 @@ document.addEventListener('turbolinks:load', function() {
   var elems = document.querySelectorAll('.parallax');
   var instances = M.Parallax.init(elems, {});
 });
+
+//MODAL INIT
+document.addEventListener('turbolinks:load', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {});
+});

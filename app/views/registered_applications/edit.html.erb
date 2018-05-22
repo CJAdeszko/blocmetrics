@@ -1,0 +1,32 @@
+<h1 class="blue-grey-text text-darken-1">Edit Application</h1>
+
+    <%= form_for @app do |f| %>
+      <div class="row">
+        <div class="input-field col s12 m8">
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: "Your apps name..." %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m8">
+          <%= f.label :url %>
+          <%= f.text_field :url, placeholder: "Your apps URL..." %>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <%= f.submit "Update", class: "waves-effect waves-light btn center-align white-text", style: "margin: 0 5px 5px 5px" %>
+          <button class="waves-effect waves-light btn center-align orange lighten-3 white-text modal-trigger" style="margin-bottom: 5px" data-target="delete_modal">Delete</button>
+      </div>
+    <% end %>
+
+    <%# MODAL STRUCTURE %>
+    <div id="delete_modal" class="modal">
+      <div class="modal-content">
+        <h5><%= "Are you sure you wish to delete #{@app.name}?" %></h5>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "No", edit_registered_application_path(@app), class: "waves-effect waves-blue btn-flat" %>
+        <%= link_to "Yes", @app, method: :delete, class: "waves-effect waves-red btn-flat" %>
+      </div>
+    </div>

@@ -1,0 +1,21 @@
+<h1 class="blue-grey-text text-darken-1">New Application</h1>
+
+  <%= form_for @app do |f| %>
+    <div class="row">
+      <div class="input-field col s12 m8">
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "Your apps name..." %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m8">
+        <%= f.label :url %>
+        <%= f.text_field :url, placeholder: "Your apps URL..." %>
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <%= f.submit "Register", class: "waves-effect waves-light btn center-align", style: "margin: 0 0 5px 5px" %>
+      </div>
+    </div>
+  <% end %>

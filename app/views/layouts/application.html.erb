@@ -14,7 +14,7 @@
   <body>
     <%# DROPDOWN STRUCTURE %>
     <ul id="dropdown1" class="dropdown-content">
-      <li><%= link_to "My Metrics", root_path %></li>
+      <li><%= link_to "My Applications", registered_applications_path(current_user) %></li>
       <li class="divider"></li>
       <li><%= link_to "Edit Account", edit_user_registration_path %></li>
       <li class="divider"></li>
@@ -44,10 +44,15 @@
       </nav>
     </div>
 
+    <%# FLASH MESSAGES %>
+    <% flash.each do |message_type, message| %>
+      <%=javascript_tag "M.toast({html: '#{message}', 4000})" %>
+    <% end %>
+
     <%# MOBILE NAV BAR %>
     <ul class="sidenav" id="mobile-demo">
       <% if user_signed_in? %>
-        <li>My Metrics</li>
+        <li><%= link_to "My Applications", registered_applications_path(current_user) %></li>
         <li class="divider"></li>
         <li><%= link_to "Edit Account", edit_user_registration_path %></li>
         <li class="divider"></li>
