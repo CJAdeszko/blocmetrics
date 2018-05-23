@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="blue-grey-text text-darken-1">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -38,8 +38,8 @@
 <% end %>
 </div>
 
-<h4>Unhappy?</h4>
-<button class="waves-effect waves-light btn center-align orange lighten-3 white-text modal-trigger" style="margin-bottom: 5px" data-target="cancel_modal">Cancel My Account</button>
+<h4 class="blue-grey-text text-darken-1">Unhappy?</h4>
+<button class="waves-effect waves-light btn center-align orange lighten-3 white-text modal-trigger" style="margin:0 0 5px 5px" data-target="cancel_modal">Cancel My Account</button>
 
 <%# MODAL STRUCTURE %>
 <div id="cancel_modal" class="modal">

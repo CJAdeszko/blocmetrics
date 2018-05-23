@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2 class="blue-grey-text text-darken-1">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -19,7 +19,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "waves-effect waves-light btn center-align", style: "margin: 0 0 5px 5px" %>
   </div>
 <% end %>
 

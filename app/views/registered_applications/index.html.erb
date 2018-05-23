@@ -12,8 +12,14 @@
             <div class="row">
             <i class="material-icons circle blue-grey">insert_chart</i>
             <span class="title"><%= app.name %></span>
-            <%= link_to "Edit App", edit_registered_application_path(app.id), class: "waves-effect waves-light right btn-small", style: "margin: 0px 2px 0px 2px" %>
-            <%= link_to "View App", registered_application_path(app.id), class: "waves-effect waves-light right btn-small", style: "margin: 0px 2px 0px 2px" %>
+            <div>
+              <div class="">
+                <%= link_to "Edit App", edit_registered_application_path(app.id), class: "waves-effect waves-light right btn-small", style: "margin: 0px 2px 0px 2px" %>
+              </div>
+              <div class="">
+                <%= link_to "View App", registered_application_path(app.id), class: "waves-effect waves-light right btn-small", style: "margin: 0px 2px 0px 2px" %>
+              </div>
+            </div>
           </div>
           </li>
         <% end %>

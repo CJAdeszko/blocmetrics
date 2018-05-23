@@ -54,10 +54,10 @@ class RegisteredApplicationsController < ApplicationController
 
     if @app.destroy
       flash[:notice] = "#{@app.name} was deleted successfully."
-      render :index
+      redirect_to action: "index"
     else
       flash.now[:alert] = "There was a problem deleting #{@app.name}. Please try again."
-      render :index
+      redirect_to action: "index"
     end
   end
 

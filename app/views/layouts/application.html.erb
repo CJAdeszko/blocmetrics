@@ -14,11 +14,11 @@
   <body>
     <%# DROPDOWN STRUCTURE %>
     <ul id="dropdown1" class="dropdown-content">
-      <li><%= link_to "My Applications", registered_applications_path(current_user) %></li>
+      <li><%= link_to "My Applications", registered_applications_path, class: "blue-grey-text text-darken-1" %></li>
       <li class="divider"></li>
-      <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+      <li><%= link_to "Edit Account", edit_user_registration_path, class: "blue-grey-text text-darken-1" %></li>
       <li class="divider"></li>
-      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :onclick => "M.toast({html: 'Signed out successfully.', displayLength: 3000})" %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :onclick => "M.toast({html: 'Signed out successfully.'})", class: "blue-grey-text text-darken-1" %></li>
       <li class="divider"></li>
     </ul>
 
@@ -46,13 +46,13 @@
 
     <%# FLASH MESSAGES %>
     <% flash.each do |message_type, message| %>
-      <%=javascript_tag "M.toast({html: '#{message}', 4000})" %>
+      <%= javascript_tag "M.toast('#{message}', 4000)" %>
     <% end %>
 
     <%# MOBILE NAV BAR %>
     <ul class="sidenav" id="mobile-demo">
       <% if user_signed_in? %>
-        <li><%= link_to "My Applications", registered_applications_path(current_user) %></li>
+        <li><%= link_to "My Applications", registered_applications_path %></li>
         <li class="divider"></li>
         <li><%= link_to "Edit Account", edit_user_registration_path %></li>
         <li class="divider"></li>
