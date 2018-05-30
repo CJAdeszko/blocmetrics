@@ -1,9 +1,9 @@
 class RegisteredApplicationsController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :confirm_app_owner, only: [:edit, :update, :show]
 
   def index
-    @apps = RegisteredApplication.all
+    @apps = current_user.registered_applications
   end
 
 
@@ -28,6 +28,8 @@ class RegisteredApplicationsController < ApplicationController
 
   def show
     @app = RegisteredApplication.find(params[:id])
+
+    @events = @app.events.group_by(&:name)
   end
 
   def edit
@@ -66,5 +68,13 @@ class RegisteredApplicationsController < ApplicationController
 
   def app_params
     params.require(:registered_application).permit(:name, :url)
+  end
+
+  def confirm_app_owner
+    app = RegisteredApplication.find(params[:id])
+      unless current_user == app.user
+        flash[:alert] = "You must be an admin to do that."
+          redirect_to action: "index"
+      end
   end
 end

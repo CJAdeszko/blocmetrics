@@ -1,0 +1,4 @@
+en:
+  faker:
+    events:
+      name: ["click", "sumbit", "view"]
