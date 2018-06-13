@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require chartkick
 
 //NAV BAR DROPDOWN INIT
 document.addEventListener('turbolinks:load', function() {

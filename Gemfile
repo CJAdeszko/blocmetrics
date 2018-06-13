@@ -51,3 +51,5 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'chartkick'
+gem 'groupdate'

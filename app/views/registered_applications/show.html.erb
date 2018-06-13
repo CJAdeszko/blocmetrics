@@ -1,6 +1,26 @@
-<h1 class="blue-grey-text text-darken-2"><%= @app.name %></h1>
-<h6 class="blue-grey-text text-darken-1"><%=@app.url %></h6>
+<h1 class="blue-grey-text text-darken-2 center-align" style="margin-bottom: 0px"><%= @app.name %></h1>
+<p class="blue-grey-text text-darken-1 center-align" style="margin-top: 0px; padding-left: 5px"><%=@app.url %></p>
+
+<h4 class="blue-grey-text text-darken-2" style="margin-top: 40px; padding-left: 5px">App Totals by Event Type</h4>
 
 <% @events.each do |event| %>
-  <p><%= event[0] %> : <%= event[1].count %></p>
+  <% if @events.count > 1 %>
+    <h6 class="blue-grey-text text-darken-1" style="padding-left: 5px; display: inline-block"><%= event[0] %>: <%= event[1].count %> |</h6>
+  <% else %>
+    <h6 class="blue-grey-text text-darken-1" style="padding-left: 5px; display: inline-block"><%= event[0] %>: <%= event[1].count %> </h6>
+  <% end %>
 <% end %>
+
+<div class="row" style="border: solid 1px #b0bec5">
+  <div class="col s12">
+    <%= pie_chart @app.events.group(:name).count, colors: ["#26a69a", "#ffcc80", "#546e7a", "#32dbca", "#f7ba60", "#78909c"]  %>
+  </div>
+</div>
+
+<h4 class="blue-grey-text text-darken-2" style="margin-top: 40px; padding-left: 5px">App Totals by Date</h4>
+
+<div class="row" style="border: solid 1px #b0bec5">
+  <div class="col s12">
+    <%= line_chart @app.events.group_by_day(:created_at).count %>
+  </div>
+</div>

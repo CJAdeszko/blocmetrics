@@ -1,29 +1,25 @@
 <div class="row">
   <h1 class="blue-grey-text text-darken-1">My Applications</h1>
-  <div><%= link_to "New App", new_registered_application_path, class: "waves-effect waves-light center-align btn-small", style: "margin: 0px 2px 0px 2px" %></div>
+  <div><%= link_to "New App", new_registered_application_path, class: "waves-effect waves-light center-align btn-large", style: "margin: 0px 2px 0px 2px" %></div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col s12">
-      <ul class="collection">
-        <% @apps.each do |app| %>
-          <li class="collection-item avatar">
-            <div class="row">
+  <div class="col s12">
+    <ul class="collection">
+      <% @apps.each do |app| %>
+        <li class="collection-item avatar">
+          <div>
             <i class="material-icons circle blue-grey">insert_chart</i>
             <span class="title"><%= app.name %></span>
-            <div>
               <div class="">
                 <%= link_to "Edit App", edit_registered_application_path(app.id), class: "waves-effect waves-light right btn-small", style: "margin: 0px 2px 0px 2px" %>
               </div>
               <div class="">
                 <%= link_to "View App", registered_application_path(app.id), class: "waves-effect waves-light right btn-small", style: "margin: 0px 2px 0px 2px" %>
               </div>
-            </div>
           </div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
